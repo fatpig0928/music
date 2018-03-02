@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+body{
+	background:url("../images/body.png");
+}
+#leftFrame{
+	margin:50px 0px 80px 80px; 
+	width:400px;
+	height:200px;
+	
+}
+#firstpane{
+	float:right;
+}
+.menu_list{width:268px;margin:0 auto;}
+.menu_head{
+	height: 47px;
+	line-height: 47px;
+	padding-left: 38px;
+	font-size: 14px;
+	color: #525252;
+	cursor: pointer;
+	border-left: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-top: 1px solid #F1F1F1;
+	position: relative;
+	margin: 0px;
+	font-weight: bold;
+	background: #f1f1f1 url(images/pro_left.png) center right no-repeat;
+}
+.menu_list .current{background:#f1f1f1 url(images/pro_down.png) center right no-repeat;}
+.menu_body{
+	line-height: 38px;
+	border-left: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
+}
+.menu_body a{display:block;height:38px;line-height:38px;padding-left:38px;color:#777777;background:#fff;text-decoration:none;border-bottom:1px solid #e1e1e1;}
+.menu_body a:hover{text-decoration:none;}
+</style>
+</head>
+<body>
+
+<!-- 代码部分begin -->
+<div id="leftFrame">
+<div id="firstpane" class="menu_list">
+	<h3 class="menu_head current">系统介绍</h3>
+	<h3 class="menu_head">管理员管理</h3>
+	<div style="display:none" class="menu_body">
+		<a href="..\background\admin\adminfind.jsp" target="right">管理员查询</a>
+		<a href="..\background\admin\adminadd.jsp" target="right">管理员添加</a>
+		<a href="..\background\admin\admindelete.jsp" target="right">管理员删除</a>
+		<a href="..\background\admin\adminupdate.jsp" target="right">管理员修改</a>
+	</div>
+	<h3 class="menu_head">用户管理</h3>
+	<div style="display:none" class="menu_body">
+		<a href="..\background\user\userfind.jsp" target="right">用户查询</a>
+		<a href="..\background\user\useradd.jsp" target="right">用户添加</a>
+		<a href="..\background\user\userdelete.jsp" target="right">用户删除</a>
+		<a href="..\background\user\userupdate.jsp" target="right">用户修改</a>
+	</div>
+	<h3 class="menu_head">歌曲管理</h3>
+	<div style="display:none" class="menu_body">
+		<a href="query.jsp" target="right">歌曲查询</a>
+		<a href="add.jsp" target="right">歌曲添加</a>
+		<a href="delete.jsp" target="right">歌曲删除</a>
+		<a href="update.jsp" target="right">歌曲修改</a>
+	</div>
+	<h3 class="menu_head">歌曲类别管理</h3>
+	<div style="display:none" class="menu_body">
+		<a href="..\background\type\typefind.jsp"  target="right">歌曲类别查询</a>
+		<a href="..\background\type\typeadd.jsp" target="right">歌曲类别添加</a>
+		<a href="..\background\type\typedelete.jsp" target="right">歌曲类别删除</a>
+		<a href="..\background\type\typeupdate.jsp" target="right">歌曲类别修改</a>
+	</div>
+		<h3 class="menu_head">歌手管理</h3>
+	<div style="display:none" class="menu_body">
+		<a href="..\background\singer\singerfind.jsp"  target="right">歌手查询</a>
+		<a href="..\background\singer\singeradd.jsp" target="right">歌手添加</a>
+		<a href="..\background\singer\singerdelete.jsp" target="right">歌手删除</a>
+		<a href="..\background\singer\singerupdate.jsp" target="right">歌手修改</a>
+	</div>
+</div>
+<script src="../js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("#firstpane .menu_body:eq(0)").show();
+	$("#firstpane h3.menu_head").click(function(){
+		$(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+		$(this).siblings().removeClass("current");
+	});
+	$("#secondpane .menu_body:eq(0)").show();
+	$("#secondpane h3.menu_head").mouseover(function(){
+		$(this).addClass("current").next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+		$(this).siblings().removeClass("current");
+	});
+});
+</script>
+<!-- 代码部分end -->
+</div>
+</body>
+</html>
